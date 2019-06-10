@@ -1,0 +1,41 @@
+<html><body>
+<h1>Contracts</h1>
+<a href="{% url 'index' %}"> Index</a>
+<a href="{% url 'logout' %}"> Logout</a>
+<table border="1px">
+    <thead>
+        <tr>
+            <th width="5%"> ID</th>
+            <th width="20%"> Costumer</th>
+            <th width="20%"> bank</th>
+            <th width="5%"> Contrat Value</th>
+            <th width="5%"> amount</th>
+            <th width="10%"> Submissions Date</th>
+            <th width="5%"> Payments</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contract in contracts %}
+        <tr>
+            <td><a href="{% url 'update_contract' contract.id %}"> {{ contract.id }}</a></td>
+            <td>{{ contract.customer }}</td>
+            <td>{{ contract.bank }}</td>
+            <td>R$ {{ contract.initial_value }}</td>
+            <td>RS {{ contract.amount }}</td>
+            <td>{{ contract.submission_date }}</td>
+            <td> <a href="{% url 'list_payments' contract.id %}"<a/> View </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+      <a href="{% url 'add_contract' %}"> New</a>
+  </div>
+</div>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <a href="/../api/contracts"> Json</a>
+  </div>
+</div>
+</body></html>

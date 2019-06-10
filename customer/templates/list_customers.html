@@ -1,0 +1,31 @@
+<html><body>
+<h1>Customers</h1>
+<table>
+    <thead>
+        <tr>
+            <th> ID</th>
+            <th> Neme</th>
+            <th> Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td><a href="{% url 'update_customer' customer.id %}"> {{ customer.id }}</a></td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+      <a href="{% url 'add_customer' %}"> New</a>
+  </div>
+</div>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <a href="/../api/customers"> Json</a>
+  </div>
+</div>
+</body></html>

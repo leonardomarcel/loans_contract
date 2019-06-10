@@ -1,0 +1,33 @@
+<html><body>
+<h1>Banks</h1>
+<a href="{% url 'index' %}"> Index</a>
+<a href="{% url 'logout' %}"> Logout</a>
+<table>
+    <thead>
+        <tr>
+            <th> ID</th>
+            <th> Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for bank in banks %}
+        <tr>
+            <td><a href="{% url 'update_bank' bank.id %}"> {{ bank.id }}</a></td>
+            <td>{{ bank.name }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+      <a href="{% url 'add_bank' %}"> New</a>
+  </div>
+</div>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <a href="/../api/bank"> Json</a>
+  </div>
+</div>
+</body></html>

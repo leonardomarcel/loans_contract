@@ -1,0 +1,74 @@
+{% load staticfiles %}
+
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Loans Contrac Sistem</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="pt-br">
+<meta name="keywords"
+	content="Onidata">
+<meta name="description"
+	content="Loans Contract Sistem ">
+<link rel="shortcut icon" href="img/shortcut.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author"
+	content="Onidata>
+
+
+
+<body>
+	<section>
+		<div id="cabecalho">
+			<p></p>
+		</div>
+	</section>
+	<section id="home">
+		<div class="conteiner">
+
+
+				<div class="row">
+					<center>
+						<div class="col-md-12">
+							<p id="nome-sistema">Loans Contract Sistem</p>
+						</div>
+
+					</center>
+				</div>
+
+				<form method="post" action="" id="submit_login">
+					{% csrf_token %}
+					<div class="row" id="login-senha" align="center">
+						<div id="form-login">
+							<div class="col-sm-3 col-md-offset-2">
+								<div class="form-group">
+									<div class="input-group input-group-lg">
+										<span class="input-group-addon" id="sizing-addon1">
+
+										</span>
+										<input type="text" class="form-control" placeholder="Digite seu login"
+											name="username" aria-describedby="sizing-addon1" id="id_email">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="input-group input-group-lg">
+									<span class="input-group-addon" id="sizing-addon1"></span> <input name="password"
+										type="password" class="form-control"
+										placeholder="Digite sua senha"
+										aria-describedby="sizing-addon1" id="id_password">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<button type="submit" class="btn btn-default btn-block btn-lg" id="btnEntrar">Entrar</button>
+							</div>
+					 </div>
+
+					</div>
+				</form>
+		</div>
+	</section>
+
+</body>
+</html>
