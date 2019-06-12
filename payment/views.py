@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 from django.shortcuts import render, render_to_response, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.messages import SUCCESS, ERROR
 
@@ -11,7 +12,7 @@ from payment.forms.form_payments import PaymentForm
 from core.models import Contract
 from payment.models import Payment
 
-
+@login_required
 def list_payments(request, id_contract):
 
     contract = get_object_or_404(Contract, id=id_contract)
@@ -21,6 +22,7 @@ def list_payments(request, id_contract):
         return redirect ('index')
     return render(request, 'list_payments.html', locals())
 
+@login_required
 def add(request):
     if request.method == 'POST':
         form = PaymentForm(request.POST, user=request.user)
@@ -36,7 +38,7 @@ def add(request):
        form =  PaymentForm(user=request.user)
     return render(request, 'form_payment.html', locals())
 
-
+@login_required
 def update(request, id_payment):
     instance = get_object_or_404(Payment, id=id_payment)
     form = PaymentForm(instance=instance, user=request.user)
