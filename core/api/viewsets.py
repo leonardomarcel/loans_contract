@@ -19,12 +19,6 @@ class ContractViewSet(viewsets.ModelViewSet):
     queryset = Contract.objects.filter()
     serializer_class = ContractSerializer
 
-    def get_queryset(self):
-        """
-        This view should return a list of all the purchases
-        for the currently authenticated user.
-        """
-        user = self.request.user
-        return Contract.objects.filter(created_user=user)
+    
 
 

@@ -1,0 +1,1 @@
+Projeto desenvolvido para realização de um teste profissional, que simula a realização de contratos de emprestimo. implementado usando as seguintes staks: Python 3.6.7 e Django 2.2.1 e Django Rest 3.9.4 
